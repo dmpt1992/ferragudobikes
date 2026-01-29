@@ -1,21 +1,23 @@
 {
-  "name": "FLOW FERRAGUDO",
-  "short_name": "FLOW FERRAGUDO",
+  "name": "Ferragudo Bikes",
+  "short_name": "Ferragudo Bikes",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/img/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#5cab9b",
-  "background_color": "#5cab9b",
+  "theme_color": "#0f2a32",
+  "background_color": "#0f2a32",
   "display": "standalone"
 }
