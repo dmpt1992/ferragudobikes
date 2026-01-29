@@ -1,115 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- BASIC SEO -->
-    <meta charset="UTF-8">
-    <!-- FAVICON -->
-<link rel="icon" type="image/png" href="favicon-96x96.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+  <title>Bike Rentals Algarve | Ferragudo Bikes</title>
 
-<link rel="canonical" href="https://bikeflow.pt/" />
+  <meta name="description" content="Bike rentals in the Algarve. Rent city bikes, mountain bikes and e-bikes in Ferragudo. Book online with Flow Ferragudo." />
+  <meta name="robots" content="index,follow" />
 
-    <title>Ferragudo Bikes | Bikes & E-Bikes in Ferragudo, Algarve</title>
+  <!-- IMPORTANT: avoid competing with main site -->
+  <link rel="canonical" href="https://flowferragudo.pt/rent/bicycles/" />
 
-    <meta name="description" content="Bike and e-bike rentals in Ferragudo, Algarve. Helmet & lock included. No deposit required. Delivery & pick-up available. Book online with Flow Ferragudo.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bike Rentals Algarve | Ferragudo Bikes" />
+  <meta property="og:description" content="Bike rentals in Algarve. Ferragudo bike & e-bike hire." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ferragudobikes.pt/" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 
-    <!-- OPEN GRAPH (SOCIAL / GOOGLE) -->
-    <meta property="og:title" content="FERRAGUDO BIKES">
-    <meta property="og:description" content="Bicycles & e-bike hire in Ferragudo. Helmet & lock included. No deposit needed.">
-    <meta property="og:image" content="https://ferragudobikes.pt/img/bg1.jpg">
-    <meta property="og:url" content="https://ferragudobikes.pt/">
-    <meta property="og:type" content="website">
-
-    <!-- PRELOAD FIRST IMAGE -->
-    <link rel="preload" as="image" href="img/bg1.jpg">
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
-  "name": "Ferragudo Bikes",
-  "url": "https://ferragudobikes.pt",
-  "image": "https://ferragudobikes.pt/img/bg1.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ferragudo",
-    "addressRegion": "Algarve",
-    "addressCountry": "PT"
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SportsActivityLocation",
+    "name":"Ferragudo Bikes",
+    "areaServed":"Algarve, Portugal",
+    "url":"https://ferragudobikes.pt/",
+    "sameAs":["https://flowferragudo.pt/"],
+    "description":"Bike rentals in Algarve. City bikes, mountain bikes and e-bikes in Ferragudo."
   }
-}
-</script>
-
+  </script>
 </head>
 
-
-
-    
 <body>
 
-    <!-- H1 for SEO (hidden visually) -->
-    <h1 class="seo-only">Ferragudo Bikes – Bikes and E-Bikes in Ferragudo Algarve</h1>
-
-
-       <section class="hero">
-
-    <div class="slider"></div>
+  <main class="hero">
     <div class="overlay"></div>
 
     <div class="content">
+      <div class="badge">Ferragudo • Algarve</div>
 
-        <div class="left">
+      <h1>Bike Rentals in Algarve</h1>
 
-            <img 
-                src="img/flow-logo.png"
-                alt="Flow Ferragudo Bike Rentals Logo"
-                class="logo"
-            >
+      <p class="subtitle">
+        City bikes, mountain bikes and e-bikes in Ferragudo.<br>
+        Easy online booking with a local team.
+      </p>
 
-            <p class="subtitle">FERRAGUDO BIKES</p>
+      <a class="btn" href="https://flowferragudo.pt/rent/bicycles/" rel="noopener">
+        Book Now
+      </a>
 
-            <div class="buttons">
-                <a href="https://flowferragudo.pt/rent/bicycles/" class="btn" target="_blank" rel="noopener">
-                    BOOK NOW
-                </a>
-                <a href="https://flowferragudo.pt/rent/bicycles/" class="btn" target="_blank" rel="noopener">
-                    MORE INFO
-                </a>
-                <a href="https://wa.me/351925392982" class="btn btn-outline" target="_blank" rel="noopener">
-                    WHATSAPP
-                </a>
-            </div>
-        </div>
-
-        <div class="right">
-
-            <img src="img/til.png" alt="" class="til top">
-
-            <p>ALL KINDS OF BIKES AVAILABLE.</p>
-            <p>HELMET & LOCK INCLUDED.</p>
-            <p>NO DEPOSIT NEEDED.</p>
-            <p>DELIVERY & PICK UP.</p>
-            <p>FREE BIKE ROUTES ON YOUR SMARTPHONE. SILVES, CARVOEIRO, ALVOR, PORTIMÃO, BENAGIL, MONCHIQUE & MORE.</p>
-
-            <img src="img/til.png" alt="" class="til bottom">
-        </div>
-
+      <!-- small real text = better indexing -->
+      <p class="seo-text">
+        Ferragudo Bikes provides bike rentals in the Algarve, operated by Flow Ferragudo.
+        Book city bikes, mountain bikes or e-bikes online and explore the Algarve on two wheels.
+      </p>
     </div>
-</section>
-
-
-    <!-- OPTIONAL IMAGE FOR SEO (BACKGROUND FALLBACK) -->
-    <img src="img/bg1.jpg" alt="Algarve Bike Rentals" class="seo-only">
-
-    <script src="js/jscript.js"></script>
+  </main>
 
 </body>
 </html>
