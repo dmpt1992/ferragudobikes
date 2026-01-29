@@ -1,201 +1,292 @@
 /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    overflow: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #070b0e;
+  color: #ffffff;
 }
 
 /* HERO */
 .hero {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    color: #fff;
+  position: relative;
+  min-height: 100vh;
+  background: url("../img/bg.jpg") center / cover no-repeat;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 28px 18px;
 }
 
-/* SLIDER */
-.slider {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    transition: opacity 2.5s ease-in-out;
-    will-change: opacity;
-}
-
-/* OVERLAY */
 .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.48);
 }
 
-/* CONTENT */
-.content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    padding: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  width: 100%;
 }
 
-/* LEFT */
-.left .logo {
-    font-size: 100px;
-    font-weight: 700;
-    text-transform: lowercase;
+.hero-fade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(7,11,14,0), rgba(7,11,14,1));
+  z-index: 1;
+}
+
+/* SMALL BADGE */
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  backdrop-filter: blur(4px);
+}
+
+/* TYPO */
+h1 {
+  font-size: clamp(34px, 5vw, 66px);
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+  margin-bottom: 14px;
+  text-shadow: 0 12px 35px rgba(0,0,0,0.35);
 }
 
 .subtitle {
-    letter-spacing: 3px;
-    margin: 10px 0 40px;
+  font-size: clamp(15px, 2.2vw, 20px);
+  line-height: 1.55;
+  opacity: 0.92;
+  max-width: 860px;
+  margin: 0 auto 26px;
+  text-shadow: 0 12px 35px rgba(0,0,0,0.35);
 }
 
-/* LOGO IMAGE (base) */
-.logo {
-    max-width: 240px;
-    margin-bottom: 10px;
+.micro {
+  margin-top: 18px;
+  font-size: 13px;
+  opacity: 0.82;
 }
 
-/* BUTTONS */
-.buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
+/* CTA BUTTONS */
+.cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 26px;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 14px;
-    transition: 0.3s;
+  display: inline-block;
+  padding: 16px 36px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 7px;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
 }
 
 .btn:hover {
-    background: #000;
-    color: #fff;
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .btn-outline {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.9);
 }
 
 .btn-outline:hover {
-    background: #fff;
-    color: #000;
+  background: #ffffff;
+  color: #000000;
 }
 
-/* RIGHT */
-.right {
-    text-align: center;
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    max-width: 420px;
+/* MAIN / SECTIONS */
+.main { background: #070b0e; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
 }
 
-/* DECOR */
-.til {
-    width: 90px;
-    opacity: 0.8;
+.section {
+  padding: 86px 0;
 }
 
-.til.top {
-    margin-bottom: 20px;
+.section.alt {
+  background: rgba(255,255,255,0.03);
 }
 
-.til.bottom {
-    margin-top: 20px;
+h2 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
 }
 
-/* SEO ONLY */
-.seo-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+.lead {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 28px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .content {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .left {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .right {
-        margin-top: 20px;
-        margin-bottom: 40px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .logo {
-        max-width: 160px;
-    }
-
-    .btn {
-        padding: 10px 15px;
-        font-size: 10px;
-        border-radius: 3px;
-    }
+/* GRID + CARDS */
+.grid {
+  display: grid;
+  gap: 14px;
 }
 
+.features { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bikes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
-
-
-.slider {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 3.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity;
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  text-align: left;
 }
 
-.slider.active {
-    opacity: 1;
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
 }
 
-
-
-@media (min-width: 769px) {
-    .slider {
-        background-position: center 65%;
-    }
+.card p {
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.88;
 }
 
+/* CENTER */
+.center {
+  text-align: center;
+  margin-top: 26px;
+}
+
+/* CHIPS */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 18px 0 26px;
+}
+
+.chip {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.20);
+  background: rgba(255,255,255,0.04);
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+/* ROUTE BOX + TICKS */
+.route-box {
+  max-width: 760px;
+  margin: 0 auto 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: left;
+}
+
+.route-box h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.ticks {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.ticks li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+.ticks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.9;
+}
+
+/* SEO TEXT */
+.seo-text {
+  margin: 34px auto 0;
+  max-width: 920px;
+  font-size: 14px;
+  line-height: 1.75;
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  padding: 26px 0 34px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  padding-bottom: 2px;
+}
+
+.footer-link:hover {
+  border-bottom-color: rgba(255,255,255,0.85);
+}
+
+/* ACCESSIBILITY */
+.btn:focus, .footer-link:focus {
+  outline: 3px solid rgba(255,255,255,0.65);
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bikes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card { text-align: left; }
+}
+
+@media (max-width: 520px) {
+  .features { grid-template-columns: 1fr; }
+  .bikes { grid-template-columns: 1fr; }
+  .section { padding: 70px 0; }
+  .btn { padding: 14px 26px; font-size: 14px; }
+}
