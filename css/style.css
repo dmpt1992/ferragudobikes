@@ -7,7 +7,7 @@
 :root {
   --flow-blue: #0f2f36;
   --flow-blue-dark: #0b2329;
-  --flow-blue-soft: rgba(15,47,54,0.85);
+  --flow-blue-soft: rgba(15,47,54,0.35);
   --flow-border: rgba(255,255,255,0.18);
 }
 
