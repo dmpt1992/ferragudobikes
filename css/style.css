@@ -1,13 +1,23 @@
 /* =========================================================
-   FERRAGUDO BIKES — FLOW PETROLEUM BLUE
+   FERRAGUDO BIKES — FLOW LIGHT (Petroleum Blue + Light UI)
    FINAL CSS (Uppercase + Lovelo-like font)
    ========================================================= */
 
 :root {
-  --flow-blue: #0f2f36;
-  --flow-blue-dark: #0b2329;
-  --flow-blue-soft: rgba(15,47,54,0.35);
-  --flow-border: rgba(255,255,255,0.18);
+  /* Brand */
+  --flow-blue: #0f2f36;           /* petroleum */
+  --flow-blue-dark: #0b2329;      /* deeper petroleum */
+  --flow-bg: #eaf3f4;             /* light background */
+  --flow-bg-2: #f5fbfc;           /* extra light */
+  --flow-border: rgba(15,47,54,0.15);
+
+  /* Text */
+  --text: #0f2f36;
+  --text-soft: rgba(15,47,54,0.82);
+
+  /* Shadows */
+  --shadow: 0 18px 45px rgba(15,47,54,0.12);
+  --shadow-soft: 0 12px 30px rgba(15,47,54,0.10);
 }
 
 /* RESET */
@@ -16,11 +26,11 @@ html, body { height: 100%; }
 
 body {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--flow-blue-dark);
-  color: #ffffff;
+  background: var(--flow-bg);
+  color: var(--text);
 }
 
-/* Uppercase titles */
+/* Uppercase system */
 h1, h2, h3,
 .badge, .btn, .btn-outline,
 .lead, .micro, .chip, .ticks li,
@@ -28,7 +38,10 @@ h1, h2, h3,
   text-transform: uppercase;
 }
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -37,12 +50,17 @@ h1, h2, h3,
   place-items: center;
   text-align: center;
   padding: 28px 18px;
+  color: #ffffff;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: var(--flow-blue-soft);
+  /* lighter, more “Algarve sunset” */
+  background: linear-gradient(
+    rgba(15,47,54,0.55),
+    rgba(15,47,54,0.35)
+  );
 }
 
 .hero-inner {
@@ -55,16 +73,16 @@ h1, h2, h3,
 .hero-fade {
   position: absolute;
   inset: auto 0 0 0;
-  height: 140px;
-  background: linear-gradient(to bottom, rgba(11,35,41,0), var(--flow-blue-dark));
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(234,243,244,0), var(--flow-bg));
   z-index: 1;
 }
 
-/* TYPO */
+/* HERO TYPO */
 .badge {
   display: inline-block;
   padding: 8px 14px;
-  border: 1px solid var(--flow-border);
+  border: 1px solid rgba(255,255,255,0.35);
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: 1.4px;
@@ -75,26 +93,27 @@ h1, h2, h3,
 h1 {
   font-size: clamp(34px, 5vw, 66px);
   line-height: 1.05;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
   margin-bottom: 14px;
-  text-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  text-shadow: 0 12px 35px rgba(0,0,0,0.22);
   font-weight: 800;
 }
 
 .subtitle {
   font-size: clamp(15px, 2.2vw, 20px);
   line-height: 1.55;
-  opacity: 0.92;
-  max-width: 900px;
+  opacity: 0.94;
+  max-width: 920px;
   margin: 0 auto 26px;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.7px;
   font-weight: 600;
+  text-shadow: 0 12px 35px rgba(0,0,0,0.18);
 }
 
 .micro {
   margin-top: 18px;
   font-size: 13px;
-  opacity: 0.85;
+  opacity: 0.88;
   letter-spacing: 0.9px;
   font-weight: 600;
 }
@@ -107,6 +126,7 @@ h1 {
   flex-wrap: wrap;
 }
 
+/* primary = brand filled */
 .btn {
   display: inline-block;
   padding: 16px 36px;
@@ -115,7 +135,8 @@ h1 {
   font-weight: 800;
   letter-spacing: 1.4px;
   text-decoration: none;
-  border-radius: 7px;
+  border-radius: 9px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
   transition: transform .2s ease, background .2s ease, color .2s ease;
 }
 
@@ -125,10 +146,12 @@ h1 {
   transform: translateY(-1px);
 }
 
+/* outline = airy */
 .btn-outline {
-  background: transparent;
+  background: rgba(255,255,255,0.08);
   color: #ffffff;
-  border: 2px solid rgba(255,255,255,0.85);
+  border: 2px solid rgba(255,255,255,0.75);
+  box-shadow: none;
 }
 
 .btn-outline:hover {
@@ -136,8 +159,11 @@ h1 {
   color: var(--flow-blue);
 }
 
-/* MAIN / SECTIONS */
-.main { background: var(--flow-blue-dark); }
+/* =========================================================
+   MAIN / SECTIONS
+   ========================================================= */
+
+.main { background: transparent; }
 
 .container {
   max-width: 1100px;
@@ -145,36 +171,53 @@ h1 {
   padding: 0 18px;
 }
 
-.section { padding: 86px 0; }
-.section.alt { background: rgba(255,255,255,0.04); }
+.section {
+  padding: 86px 0;
+}
+
+.section.alt {
+  /* clean “panel” instead of dark */
+  background: #ffffff;
+}
 
 h2 {
   font-size: clamp(26px, 3.2vw, 40px);
   margin-bottom: 12px;
-  letter-spacing: 1px;
+  letter-spacing: 1.1px;
   font-weight: 800;
+  color: var(--text);
 }
 
 .lead {
   font-size: 15px;
   line-height: 1.7;
-  opacity: 0.9;
   margin-bottom: 28px;
   letter-spacing: 0.8px;
   font-weight: 600;
+  color: var(--text-soft);
 }
 
-/* GRID / CARDS */
+/* =========================================================
+   GRID / CARDS (light)
+   ========================================================= */
+
 .grid { display: grid; gap: 14px; }
-.features { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.bikes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.features {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.bikes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
 .card {
-  background: rgba(255,255,255,0.06);
+  background: #ffffff;
   border: 1px solid var(--flow-border);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 18px 18px 16px;
   text-align: left;
+  box-shadow: var(--shadow-soft);
 }
 
 .card h3 {
@@ -182,20 +225,24 @@ h2 {
   margin-bottom: 8px;
   letter-spacing: 1px;
   font-weight: 800;
+  color: var(--text);
 }
 
 .card p {
   font-size: 13px;
   line-height: 1.65;
-  opacity: 0.92;
   letter-spacing: 0.6px;
   font-weight: 600;
+  color: var(--text-soft);
 }
 
-/* CENTER */
+/* Center */
 .center { text-align: center; margin-top: 26px; }
 
-/* CHIPS */
+/* =========================================================
+   CHIPS (light)
+   ========================================================= */
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -208,22 +255,27 @@ h2 {
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--flow-border);
-  background: rgba(255,255,255,0.04);
+  background: var(--flow-bg-2);
   font-size: 12px;
-  opacity: 0.92;
+  opacity: 0.95;
   letter-spacing: 1px;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text);
 }
 
-/* ROUTE BOX + TICKS */
+/* =========================================================
+   ROUTE BOX (light)
+   ========================================================= */
+
 .route-box {
   max-width: 760px;
   margin: 0 auto 10px;
-  background: rgba(255,255,255,0.06);
+  background: #ffffff;
   border: 1px solid var(--flow-border);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 18px;
   text-align: left;
+  box-shadow: var(--shadow);
 }
 
 .route-box h3 {
@@ -231,6 +283,7 @@ h2 {
   margin-bottom: 10px;
   letter-spacing: 1px;
   font-weight: 800;
+  color: var(--text);
 }
 
 .ticks {
@@ -244,9 +297,9 @@ h2 {
   padding-left: 22px;
   font-size: 13px;
   line-height: 1.65;
-  opacity: 0.92;
   letter-spacing: 0.6px;
   font-weight: 600;
+  color: var(--text-soft);
 }
 
 .ticks li::before {
@@ -254,26 +307,31 @@ h2 {
   position: absolute;
   left: 0;
   top: 0;
+  color: var(--flow-blue);
   opacity: 0.95;
 }
 
-/* SEO TEXT (keep readable; uppercase handled by rule above) */
+/* SEO TEXT */
 .seo-text {
   margin: 34px auto 0;
   max-width: 920px;
   font-size: 13px;
   line-height: 1.85;
-  opacity: 0.85;
+  opacity: 0.9;
   text-align: center;
   letter-spacing: 0.5px;
   font-weight: 600;
+  color: var(--text-soft);
 }
 
-/* FOOTER — smarter */
+/* =========================================================
+   FOOTER (light & smart)
+   ========================================================= */
+
 .footer {
   padding: 28px 0 34px;
   border-top: 1px solid var(--flow-border);
-  background: rgba(255,255,255,0.02);
+  background: #ffffff;
 }
 
 .footer-inner {
@@ -283,15 +341,13 @@ h2 {
   gap: 18px;
 }
 
-.footer-left {
-  max-width: 680px;
-}
+.footer-left { max-width: 680px; }
 
 .footer-brand {
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 800;
-  opacity: 0.95;
+  color: var(--text);
   margin-bottom: 6px;
 }
 
@@ -299,7 +355,7 @@ h2 {
   font-size: 12px;
   letter-spacing: 0.8px;
   font-weight: 600;
-  opacity: 0.85;
+  color: var(--text-soft);
 }
 
 .footer-right {
@@ -310,28 +366,34 @@ h2 {
 }
 
 .footer-link {
-  color: #ffffff;
+  color: var(--flow-blue);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.35);
+  border-bottom: 1px solid rgba(15,47,54,0.25);
   padding-bottom: 2px;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: 800;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .footer-link:hover {
-  border-bottom-color: rgba(255,255,255,0.85);
+  border-bottom-color: rgba(15,47,54,0.55);
   opacity: 1;
 }
 
-/* ACCESSIBILITY */
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
 .btn:focus, .footer-link:focus {
-  outline: 3px solid rgba(255,255,255,0.65);
+  outline: 3px solid rgba(15,47,54,0.35);
   outline-offset: 3px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 980px) {
   .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bikes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
