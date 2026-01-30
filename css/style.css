@@ -63,7 +63,7 @@ h1,h2,h3,
   /* “Flow” overlay that still feels sunny */
   background: linear-gradient(
     rgba(15,47,54,0.58),
-    rgba(15,47,54,0.28)
+    rgba(15,47,54,0.18)
   );
 }
 
