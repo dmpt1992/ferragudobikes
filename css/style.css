@@ -454,3 +454,88 @@ h2{
   .section{ padding: 70px 0; }
   .btn{ padding: 14px 26px; font-size: 14px; }
 }
+
+
+
+/* =========================================================
+   BUTTON ICONS (BOOK NOW)
+   ========================================================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.btn .btn-ico{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:0;
+}
+
+.btn .btn-ico svg{
+  display:block;
+}
+
+/* opcional: dar um toque mais “WhatsApp” ao ícone sem mudar cor do tema */
+.btn .wa-ico{
+  opacity:.95;
+}
+
+/* =========================================================
+   FLOATING WHATSAPP BUTTON
+   ========================================================= */
+.wa-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:12px 14px;
+  border-radius:999px;
+
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.02em;
+
+  /* herda a tua estética (se tiveres variáveis, podes trocar por var(--...) ) */
+  background: rgba(10, 10, 10, .88);
+  color:#fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  backdrop-filter: blur(10px);
+}
+
+.wa-float__ico{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  background: rgba(255,255,255,.12);
+}
+
+.wa-float__txt{
+  font-size:14px;
+}
+
+.wa-float:hover{
+  transform: translateY(-1px);
+}
+
+@media (max-width: 520px){
+  .wa-float{
+    right:12px;
+    bottom:12px;
+    padding:12px;
+  }
+  .wa-float__txt{
+    display:none; /* em mobile fica só o ícone (como normalmente fazemos) */
+  }
+}
+
