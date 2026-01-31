@@ -4,24 +4,23 @@
    ========================================================= */
 
 :root{
-  /* Brand */
-  --flow-blue: #0f2f36;
-  --flow-blue-dark: #0b2329;
+  --flow-blue:#2b2b2b;          /* quase preto */
+  --flow-blue-dark:#1c1c1c;
 
-  /* Tinted backgrounds (less white) */
-  --page-bg:  #d3e6e9;   /* main page tint */
-  --panel-bg: #cbe0e4;   /* alt section tint */
-  --card-bg:  #e6f1f3;   /* cards tinted, not white */
+  --page-bg:#f4efe9;            /* areia clara */
+  --panel-bg:#e7ded2;           /* areia mais densa */
+  --card-bg:#ffffff;
 
-  /* Text */
-  --text: #0f2f36;
-  --text-soft: rgba(15,47,54,0.80);
+  --text:#1e1e1e;
+  --text-soft:rgba(30,30,30,.68);
 
-  /* Borders & shadows */
-  --border: rgba(15,47,54,0.18);
-  --shadow-soft: 0 10px 24px rgba(15,47,54,0.10);
-  --shadow: 0 16px 36px rgba(15,47,54,0.12);
+  --border:rgba(30,30,30,.18);
+  --shadow:0 18px 40px rgba(0,0,0,.12);
+  --shadow-soft:0 10px 24px rgba(0,0,0,.08);
+
+  --accent:#c46a2b;             /* terracota */
 }
+
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
